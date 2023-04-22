@@ -1,0 +1,57 @@
+<p>todo works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">created</th>
+                        <th scope="col">title</th>
+                        <th scope="col">date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let a of alldata">
+                        <th scope="row"><input type="radio" name="radio" (change)="select(a)"></th>
+                        <th scope="row">{{a.title}}</th>
+                        <td>{{a.description}}</td>
+                        <td>{{a.created}}</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 style="text-align: center;">todos operation</h4>
+                    <form>
+                        <div class="form-group">
+                            title:--
+                            <input type="text" name="title" placeholder="enter title here" class="form-control"
+                                [(ngModel)]="newtodo.title">
+                        </div>
+                        <div class="form-group">
+                            description:--
+                            <textarea name="desc" id="" cols="10" rows="3" class="form-control"
+                                placeholder="enter description" [(ngModel)]="newtodo.desc"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-sm btn-outline-success" (click)="CREATETODO()">Add</button>
+                            &nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-sm  btn-outline-warning" (click)="UPDATE()">Update</button>
+                            &nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-sm  btn-outline-danger" (click)="DELETE()">Delete</button>
+                            &nbsp;&nbsp;&nbsp;
+                            <!-- <button class="btn btn-sm btn-danger" (click)="logout()">Log Out</button>  -->
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
